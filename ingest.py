@@ -65,7 +65,6 @@ print(f"the number of chunks in this document is {len(chunks)}")
 embeddings = generate_embeddings(chunks)
 print(f"the shape of the embdding is {embeddings.shape}")
 
-
 # calling the functions to storing chunks and embeddings in vector database
 
 def store_embeddings(chunks, embeddings, doc_name):
