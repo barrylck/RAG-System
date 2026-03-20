@@ -1,2 +1,34 @@
-.gitattributes
+# environment variables - never commit this
+.env
+
+# chromadb data
+chroma_db/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# jupyter
+.ipynb_checkpoints/
+
+# logs
+*.log
+
+# pdf data files - too large for github
+data/*.pdf
+
+# eval results - generated output, not source code
+eval/eval_results.json
+
+# vscode
 .vscode/
+
+# mac
+.DS_Store
+
+# anaconda
+*.egg-info/
+dist/
+build/
