@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "category": "factual",
+    "question": "What was Apple's total net sales in fiscal year 2023?",
+    "expected_answer": "Apple's total net sales in fiscal year 2023 were $383.285 billion."
+  },
+  {
+    "id": 2,
+    "category": "factual",
+    "question": "How many shares did Apple repurchase in 2023 and at what total cost?",
+    "expected_answer": "Apple repurchased 471 million shares for $76.6 billion in fiscal year 2023."
+  },
+  {
+    "id": 3,
+    "category": "factual",
+    "question": "What was Apple's effective tax rate in fiscal year 2023?",
+    "expected_answer": "Apple's effective tax rate in fiscal year 2023 was 14.7%."
+  },
+  {
+    "id": 4,
+    "category": "factual",
+    "question": "What was Apple's total operating income in fiscal year 2023?",
+    "expected_answer": "Apple's total operating income in fiscal year 2023 was $114.301 billion."
+  },
+  {
+    "id": 5,
+    "category": "factual",
+    "question": "Who audits Apple's financial statements?",
+    "expected_answer": "Ernst & Young LLP audits Apple's financial statements. They have served as Apple's auditor since 2009."
+  },
+  {
+    "id": 6,
+    "category": "factual",
+    "question": "What was Apple's net sales in the Americas segment in fiscal year 2023?",
+    "expected_answer": "Apple's Americas segment net sales in fiscal year 2023 were $162.560 billion."
+  },
+  {
+    "id": 7,
+    "category": "multi_document",
+    "question": "How did Apple's total net sales change between fiscal year 2023 and fiscal year 2024?",
+    "expected_answer": "Apple's total net sales were $383.285 billion in fiscal year 2023 and $391.035 billion in fiscal year 2024, representing an increase of approximately $7.75 billion or about 2%."
+  },
+  {
+    "id": 8,
+    "category": "multi_document",
+    "question": "How did Apple's Greater China net sales trend from 2023 to 2024?",
+    "expected_answer": "Apple's Greater China net sales declined from $72.559 billion in fiscal year 2023 to approximately $66.952 billion in fiscal year 2024, a decrease reflecting competitive pressure in the Chinese market."
+  },
+  {
+    "id": 9,
+    "category": "multi_document",
+    "question": "Compare Apple's share repurchase activity across the annual reports available.",
+    "expected_answer": "In fiscal year 2023, Apple repurchased 471 million shares for $76.6 billion. The 2024 and 2025 reports contain additional repurchase data for those respective fiscal years."
+  },
+  {
+    "id": 10,
+    "category": "multi_document",
+    "question": "Has Apple's research and development expense increased over the years covered in the documents?",
+    "expected_answer": "Yes. Apple's R&D expense was $29.915 billion in fiscal year 2023, up from $26.251 billion in 2022 and $21.914 billion in 2021, showing a consistent upward trend."
+  },
+  {
+    "id": 11,
+    "category": "no_answer",
+    "question": "What is Apple's strategy for entering the electric vehicle market?",
+    "expected_answer": "not in documents"
+  },
+  {
+    "id": 12,
+    "category": "no_answer",
+    "question": "What is Tim Cook's annual salary?",
+    "expected_answer": "not in documents"
+  },
+  {
+    "id": 13,
+    "category": "no_answer",
+    "question": "How many employees does Apple have in China?",
+    "expected_answer": "not in documents"
+  },
+  {
+    "id": 14,
+    "category": "adversarial",
+    "question": "What was Apple's revenue in fiscal year 2019?",
+    "expected_answer": "not in documents"
+  },
+  {
+    "id": 15,
+    "category": "adversarial",
+    "question": "Apple's net sales declined significantly in 2023 compared to 2022 — what caused this drop?",
+    "expected_answer": "This question contains a false premise. Apple's net sales in fiscal year 2023 were $383.285 billion, down from $394.328 billion in fiscal year 2022 — a decline of about $11 billion or roughly 3%, not a significant drop. The documents cite macroeconomic conditions and foreign exchange headwinds as contributing factors."
+  }
+]

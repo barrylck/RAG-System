@@ -1,7 +1,9 @@
+import os
 from pypdf import PdfReader
-import re
 from sentence_transformers import SentenceTransformer
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import chromadb 
+import re
 
 #initialization
 encoder_model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -15,32 +17,29 @@ def read_pdf(filepath):
         full_text+=page.extract_text()
     return full_text
 
-# split text into paragraphs
-def split_by_paragraphs(text):
-    paragraphs = re.split(r'\n\s*\n', text)
-    paragraphs = [p.strip() for p in paragraphs if p.strip()]
-    return paragraphs
-
-# split text into chunks by words, with a specified chunk size and overlap
-def split_by_tokens(text,chunk_size=250,overlap=50):
-    words = text.split()
-    chunks = []
-    start=0
-    while start<len(words):
-        end = start+chunk_size
-        chunks.append(" ".join(words[start:end]))
-        start+=chunk_size-overlap
-    return chunks
 
 # split document into chunks, first by paragraphs, then by tokens if the paragraph is too long
-def split_document(text, chunk_size = 250, overlap = 50):
+def split_document(text, chunk_size = 256, overlap = 26):
+
+    def split_by_paragraphs(text):
+        paragraphs = re.split(r'\n\s*\n',text)
+        paragraphs = [p.strip() for p in paragraphs if p.strip()]
+        return paragraphs
+    
+    text_splitter=RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=overlap, 
+        length_function=lambda text: len(text.split())
+    )
+
     paragraphs = split_by_paragraphs(text)
     final_chunks = []
+
     for paragraph in paragraphs:
         if len(paragraph.split())<=chunk_size:
             final_chunks.append(paragraph)
         else:
-            sub_chunk = split_by_tokens(paragraph)
+            sub_chunk = text_splitter.split_text(paragraph)
             final_chunks.extend(sub_chunk)
     return final_chunks
 
@@ -75,7 +74,6 @@ for pdf_path in pdf_paths:
     store_in_chromadb(chunks, embeddings, doc_name, collection)
     print(f"for {doc_name},{len(chunks)} of chunks are stored")
 
-print(f"total number of chunk loaded is {collection.count()}")
 
 
 
